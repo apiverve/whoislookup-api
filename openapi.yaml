@@ -1,32 +1,37 @@
 openapi: 3.0.4
 info:
   title: WHOIS Lookup
-  description: Whois Lookup is a simple tool for checking the registration of a domain name. It returns the name and contact information of the domain owner, the domain registrar, and more.
+  description: >-
+    Whois Lookup is a simple tool for checking the registration of a domain
+    name. It returns the name and contact information of the domain owner, the
+    domain registrar, and more.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/whoislookup:
     get:
       summary: Lookup Domain
-      description: Whois Lookup is a simple tool for checking the registration of a domain name. It returns the name and contact information of the domain owner, the domain registrar, and more.
+      description: Lookup domain registration data based on the domain name
       operationId: whoislookup
       parameters:
-      - name: domain
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The domain name for which you want to get the registration data (e.g., myspace.com)
-        example: myspace.com
+        - name: domain
+          in: query
+          schema:
+            type: string
+          required: true
+          description: >-
+            The domain name for which you want to get the registration data
+            (e.g., myspace.com)
+          example: myspace.com
       responses:
         '200':
           description: Successful Response
@@ -42,35 +47,72 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
-                  domainStatus:
-                  - clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
-                  - clientRenewProhibited https://icann.org/epp#clientRenewProhibited
-                  - clientTransferProhibited https://icann.org/epp#clientTransferProhibited
-                  - clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
                   domainName: MYSPACE.COM
                   registryDomainID: 3877095_DOMAIN_COM-VRSN
-                  registrarWHOISServer: whois.godaddy.com
-                  registrarURL: http://www.godaddy.com
-                  updatedDate: 2023-01-17T00:16:21.0000000Z
-                  createdDate: 1996-02-22T05:00:00.0000000Z
-                  expiryDate: 2029-02-23T05:00:00.0000000Z
+                  createdDate: '1996-02-22T05:00:00Z'
+                  expiryDate: '2029-02-23T05:00:00Z'
+                  updatedDate: '2023-01-17T00:16:21Z'
+                  domainStatus:
+                    - >-
+                      client delete prohibited https://icann.org/epp#client
+                      delete prohibited
+                    - >-
+                      client renew prohibited https://icann.org/epp#client renew
+                      prohibited
+                    - >-
+                      client transfer prohibited https://icann.org/epp#client
+                      transfer prohibited
+                    - >-
+                      client update prohibited https://icann.org/epp#client
+                      update prohibited
+                  dNSSEC: unsigned
                   registrar: GoDaddy.com, LLC
                   registrarIANAID: '146'
+                  registrarURL: http://www.godaddy.com
                   registrarAbuseContactEmail: abuse@godaddy.com
-                  registrarAbuseContactPhone: 480-624-2505
-                  dNSSEC: unsigned
+                  registrarAbuseContactPhone: tel:480-624-2505
+                  nameServers:
+                    - ns-cloud-a2.googledomains.com
+                    - ns-cloud-a3.googledomains.com
+                    - ns-cloud-a4.googledomains.com
+                    - ns-cloud-a1.googledomains.com
+                  domain: myspace.com
+                  fetchedAtUTC: '2025-12-17T01:54:05.069Z'
+                  tld: com
+                  statusFlags:
+                    - flag: client
+                      description: >-
+                        delete prohibited https://icann.org/epp#client delete
+                        prohibited
+                      link: delete
+                    - flag: client
+                      description: >-
+                        renew prohibited https://icann.org/epp#client renew
+                        prohibited
+                      link: renew
+                    - flag: client
+                      description: >-
+                        transfer prohibited https://icann.org/epp#client
+                        transfer prohibited
+                      link: transfer
+                    - flag: client
+                      description: >-
+                        update prohibited https://icann.org/epp#client update
+                        prohibited
+                      link: update
+                  status: active
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -78,4 +120,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
