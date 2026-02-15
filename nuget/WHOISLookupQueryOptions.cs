@@ -12,7 +12,6 @@ namespace APIVerve.API.WHOISLookup
     {
         /// <summary>
         /// The domain name for which you want to get the registration data (e.g., myspace.com)
-        /// Example: myspace.com
         /// </summary>
         [JsonProperty("domain")]
         public string Domain { get; set; }
