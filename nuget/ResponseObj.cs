@@ -57,7 +57,6 @@ namespace APIVerve.API.WHOISLookup
         public string Registrar { get; set; }
 
         [JsonProperty("registrarIANAID")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long RegistrarIanaid { get; set; }
 
         [JsonProperty("registrarAbuseContactEmail")]
