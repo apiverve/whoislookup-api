@@ -233,8 +233,9 @@ from apiverve_whoislookup.apiClient import WhoislookupAPIClient
 
 api = WhoislookupAPIClient("[YOUR_API_KEY]")
 
+query = { "domain": "myspace.com" }
+
 try:
-    query = { "domain": "myspace.com" }
     result = api.execute(query)
     print(result)
 finally:
