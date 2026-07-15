@@ -122,24 +122,38 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "domainStatus": [
-      "clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited",
-      "clientRenewProhibited https://icann.org/epp#clientRenewProhibited",
-      "clientTransferProhibited https://icann.org/epp#clientTransferProhibited",
-      "clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited"
-    ],
     "domainName": "MYSPACE.COM",
     "registryDomainID": "3877095_DOMAIN_COM-VRSN",
-    "registrarWHOISServer": "whois.godaddy.com",
-    "registrarURL": "http://www.godaddy.com",
-    "updatedDate": "2023-01-17T00:16:21Z",
     "createdDate": "1996-02-22T05:00:00Z",
     "expiryDate": "2029-02-23T05:00:00Z",
+    "updatedDate": "2023-01-17T00:16:21Z",
+    "domainStatus": [
+      "client delete prohibited https://icann.org/epp#client delete prohibited",
+      "client renew prohibited https://icann.org/epp#client renew prohibited",
+      "client transfer prohibited https://icann.org/epp#client transfer prohibited",
+      "client update prohibited https://icann.org/epp#client update prohibited"
+    ],
+    "dNSSEC": "unsigned",
     "registrar": "GoDaddy.com, LLC",
     "registrarIANAID": "146",
+    "registrarURL": "http://www.godaddy.com",
     "registrarAbuseContactEmail": "abuse@godaddy.com",
-    "registrarAbuseContactPhone": "480-624-2505",
-    "dNSSEC": "unsigned"
+    "registrarAbuseContactPhone": "tel:480-624-2505",
+    "nameServers": [
+      "ns-cloud-a2.googledomains.com",
+      "ns-cloud-a3.googledomains.com",
+      "ns-cloud-a4.googledomains.com",
+      "ns-cloud-a1.googledomains.com"
+    ],
+    "domain": "myspace.com",
+    "fetchedAtUTC": "2025-12-17T01:54:05.069Z",
+    "tld": "com",
+    "status": "active",
+    "domainAgeDays": 11094,
+    "domainAgeYears": 30.4,
+    "isRecentlyRegistered": false,
+    "trustScore": 93,
+    "trustLevel": "high"
   }
 }
 ```
