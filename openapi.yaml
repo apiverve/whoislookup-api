@@ -85,28 +85,12 @@ paths:
                   domain: myspace.com
                   fetchedAtUTC: '2025-12-17T01:54:05.069Z'
                   tld: com
-                  statusFlags:
-                    - flag: client
-                      description: >-
-                        delete prohibited https://icann.org/epp#client delete
-                        prohibited
-                      link: delete
-                    - flag: client
-                      description: >-
-                        renew prohibited https://icann.org/epp#client renew
-                        prohibited
-                      link: renew
-                    - flag: client
-                      description: >-
-                        transfer prohibited https://icann.org/epp#client
-                        transfer prohibited
-                      link: transfer
-                    - flag: client
-                      description: >-
-                        update prohibited https://icann.org/epp#client update
-                        prohibited
-                      link: update
                   status: active
+                  domainAgeDays: 11094
+                  domainAgeYears: 30.4
+                  isRecentlyRegistered: false
+                  trustScore: 93
+                  trustLevel: high
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
