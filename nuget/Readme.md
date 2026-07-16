@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.WHOISLookup;
 
 class Program
 {
@@ -60,8 +60,8 @@ class Program
         // Initialize the API client
         var apiClient = new WHOISLookupAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    domain = "myspace.com"
+        var queryOptions = new WHOISLookupQueryOptions {
+    Domain = "myspace.com"
 };
 
         // Make the API call
@@ -116,7 +116,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.WHOISLookup;
 
 public class Example
 {
@@ -124,8 +124,8 @@ public class Example
     {
         var apiClient = new WHOISLookupAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    domain = "myspace.com"
+        var queryOptions = new WHOISLookupQueryOptions {
+    Domain = "myspace.com"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -148,7 +148,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.WHOISLookup;
 
 public class Example
 {
@@ -156,8 +156,8 @@ public class Example
     {
         var apiClient = new WHOISLookupAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    domain = "myspace.com"
+        var queryOptions = new WHOISLookupQueryOptions {
+    Domain = "myspace.com"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -185,7 +185,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.WHOISLookup;
 
 public class Example
 {
@@ -193,8 +193,8 @@ public class Example
     {
         var apiClient = new WHOISLookupAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    domain = "myspace.com"
+        var queryOptions = new WHOISLookupQueryOptions {
+    Domain = "myspace.com"
 };
 
         try
@@ -237,7 +237,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.WHOISLookup;
 
 public class Example
 {
@@ -249,8 +249,8 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    domain = "myspace.com"
+        var queryOptions = new WHOISLookupQueryOptions {
+    Domain = "myspace.com"
 };
 
         try
@@ -290,8 +290,8 @@ var apiClient = new WHOISLookupAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    domain = "myspace.com"
+var queryOptions = new WHOISLookupQueryOptions {
+    Domain = "myspace.com"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,8 +316,8 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    domain = "myspace.com"
+var queryOptions = new WHOISLookupQueryOptions {
+    Domain = "myspace.com"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,8 +334,8 @@ var apiClient = new WHOISLookupAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    domain = "myspace.com"
+var queryOptions = new WHOISLookupQueryOptions {
+    Domain = "myspace.com"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,8 +346,8 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    domain = "myspace.com"
+var queryOptions = new WHOISLookupQueryOptions {
+    Domain = "myspace.com"
 };
 
 using (var apiClient = new WHOISLookupAPIClient("[YOUR_API_KEY]"))
@@ -367,24 +367,38 @@ using (var apiClient = new WHOISLookupAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "domainStatus": [
-      "clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited",
-      "clientRenewProhibited https://icann.org/epp#clientRenewProhibited",
-      "clientTransferProhibited https://icann.org/epp#clientTransferProhibited",
-      "clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited"
-    ],
     "domainName": "MYSPACE.COM",
     "registryDomainID": "3877095_DOMAIN_COM-VRSN",
-    "registrarWHOISServer": "whois.godaddy.com",
-    "registrarURL": "http://www.godaddy.com",
-    "updatedDate": "2023-01-17T00:16:21Z",
     "createdDate": "1996-02-22T05:00:00Z",
     "expiryDate": "2029-02-23T05:00:00Z",
+    "updatedDate": "2023-01-17T00:16:21Z",
+    "domainStatus": [
+      "client delete prohibited https://icann.org/epp#client delete prohibited",
+      "client renew prohibited https://icann.org/epp#client renew prohibited",
+      "client transfer prohibited https://icann.org/epp#client transfer prohibited",
+      "client update prohibited https://icann.org/epp#client update prohibited"
+    ],
+    "dNSSEC": "unsigned",
     "registrar": "GoDaddy.com, LLC",
     "registrarIANAID": "146",
+    "registrarURL": "http://www.godaddy.com",
     "registrarAbuseContactEmail": "abuse@godaddy.com",
-    "registrarAbuseContactPhone": "480-624-2505",
-    "dNSSEC": "unsigned"
+    "registrarAbuseContactPhone": "tel:480-624-2505",
+    "nameServers": [
+      "ns-cloud-a2.googledomains.com",
+      "ns-cloud-a3.googledomains.com",
+      "ns-cloud-a4.googledomains.com",
+      "ns-cloud-a1.googledomains.com"
+    ],
+    "domain": "myspace.com",
+    "fetchedAtUTC": "2025-12-17T01:54:05.069Z",
+    "tld": "com",
+    "status": "active",
+    "domainAgeDays": 11094,
+    "domainAgeYears": 30.4,
+    "isRecentlyRegistered": false,
+    "trustScore": 93,
+    "trustLevel": "high"
   }
 }
 ```
