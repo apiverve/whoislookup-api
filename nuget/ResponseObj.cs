@@ -25,39 +25,42 @@ namespace APIVerve.API.WHOISLookup
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
-        [JsonProperty("domainStatus")]
-        public string[] DomainStatus { get; set; }
-
         [JsonProperty("domainName")]
         public string DomainName { get; set; }
 
         [JsonProperty("registryDomainID")]
         public string RegistryDomainId { get; set; }
 
-        [JsonProperty("registrarWHOISServer")]
-        public string RegistrarWhoisServer { get; set; }
-
-        [JsonProperty("registrarURL")]
-        public Uri RegistrarUrl { get; set; }
-
-        [JsonProperty("updatedDate")]
-        public DateTimeOffset UpdatedDate { get; set; }
-
         [JsonProperty("createdDate")]
-        public DateTimeOffset CreatedDate { get; set; }
+        public DateTimeOffset? CreatedDate { get; set; }
 
         [JsonProperty("expiryDate")]
-        public DateTimeOffset ExpiryDate { get; set; }
+        public DateTimeOffset? ExpiryDate { get; set; }
+
+        [JsonProperty("updatedDate")]
+        public DateTimeOffset? UpdatedDate { get; set; }
+
+        [JsonProperty("domainStatus")]
+        public string[] DomainStatus { get; set; }
+
+        [JsonProperty("dNSSEC")]
+        public string DNssec { get; set; }
 
         [JsonProperty("registrar")]
         public string Registrar { get; set; }
 
         [JsonProperty("registrarIANAID")]
-        public long RegistrarIanaid { get; set; }
+        public long? RegistrarIanaid { get; set; }
+
+        [JsonProperty("registrarURL")]
+        public Uri RegistrarUrl { get; set; }
 
         [JsonProperty("registrarAbuseContactEmail")]
         public string RegistrarAbuseContactEmail { get; set; }
@@ -65,7 +68,46 @@ namespace APIVerve.API.WHOISLookup
         [JsonProperty("registrarAbuseContactPhone")]
         public string RegistrarAbuseContactPhone { get; set; }
 
-        [JsonProperty("dNSSEC")]
-        public string DNssec { get; set; }
+        [JsonProperty("nameServers")]
+        public string[] NameServers { get; set; }
+
+        [JsonProperty("domain")]
+        public string Domain { get; set; }
+
+        [JsonProperty("fetchedAtUTC")]
+        public DateTimeOffset? FetchedAtUtc { get; set; }
+
+        [JsonProperty("tld")]
+        public string Tld { get; set; }
+
+        [JsonProperty("status")]
+        public string Status { get; set; }
+
+        [JsonProperty("domainAgeDays")]
+        public long? DomainAgeDays { get; set; }
+
+        [JsonProperty("domainAgeYears")]
+        public double? DomainAgeYears { get; set; }
+
+        [JsonProperty("isRecentlyRegistered")]
+        public bool? IsRecentlyRegistered { get; set; }
+
+        [JsonProperty("trustScore")]
+        public long? TrustScore { get; set; }
+
+        [JsonProperty("trustLevel")]
+        public string TrustLevel { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
