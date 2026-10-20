@@ -1,13 +1,13 @@
-# [WHOIS Lookup API](https://whoislookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [WHOIS Lookup API](https://apiverve.com/marketplace/whoislookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Whois Lookup is a simple tool for checking the registration of a domain name. It returns the name and contact information of the domain owner, the domain registrar, and more.
+WHOIS Lookup checks domain registration records to return registrar details, creation and expiration dates, domain age, and active nameservers. Pass any domain name to inspect status codes and calculate days since registration.
 
 The WHOIS Lookup API provides a simple, reliable way to integrate whois lookup functionality into your applications. Built for developers who need production-ready whois lookup capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://whoislookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/whoislookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://whoislookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/whoislookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -161,7 +161,7 @@ go get github.com/apiverve/whoislookup-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [WHOIS Lookup API](https://whoislookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [WHOIS Lookup API](https://apiverve.com/marketplace/whoislookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/whoislookup](https://docs.apiverve.com/ref/whoislookup)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -191,11 +191,59 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the WHOIS Lookup API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "domainName": "MYSPACE.COM",
+    "registryDomainID": "3877095_DOMAIN_COM-VRSN",
+    "createdDate": "1996-02-22T05:00:00Z",
+    "expiryDate": "2029-02-23T05:00:00Z",
+    "updatedDate": "2023-01-17T00:16:21Z",
+    "domainStatus": [
+      "client delete prohibited https://icann.org/epp#client delete prohibited",
+      "client renew prohibited https://icann.org/epp#client renew prohibited",
+      "client transfer prohibited https://icann.org/epp#client transfer prohibited",
+      "client update prohibited https://icann.org/epp#client update prohibited"
+    ],
+    "dNSSEC": "unsigned",
+    "registrar": "GoDaddy.com, LLC",
+    "registrarIANAID": "146",
+    "registrarURL": "http://www.godaddy.com",
+    "registrarAbuseContactEmail": "abuse@godaddy.com",
+    "registrarAbuseContactPhone": "tel:480-624-2505",
+    "nameServers": [
+      "ns-cloud-a2.googledomains.com",
+      "ns-cloud-a3.googledomains.com",
+      "ns-cloud-a4.googledomains.com",
+      "ns-cloud-a1.googledomains.com"
+    ],
+    "domain": "myspace.com",
+    "fetchedAtUTC": "2025-12-17T01:54:05.069Z",
+    "tld": "com",
+    "status": "active",
+    "domainAgeDays": 11094,
+    "domainAgeYears": 30.4,
+    "isRecentlyRegistered": false,
+    "trustScore": 93,
+    "trustLevel": "high"
+  }
 }
 ```
 
@@ -203,7 +251,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [WHOIS Lookup API](https://whoislookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [WHOIS Lookup API](https://apiverve.com/marketplace/whoislookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

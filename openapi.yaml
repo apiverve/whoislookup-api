@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: WHOIS Lookup
   description: >-
-    Whois Lookup is a simple tool for checking the registration of a domain
-    name. It returns the name and contact information of the domain owner, the
-    domain registrar, and more.
+    WHOIS Lookup checks domain registration records to return registrar details,
+    creation and expiration dates, domain age, and active nameservers. Pass any
+    domain name to inspect status codes and calculate days since registration.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/whoislookup:
     get:
-      summary: Lookup Domain
+      summary: WHOIS Lookup
       description: Lookup domain registration data based on the domain name
       operationId: whoislookup
       parameters:
