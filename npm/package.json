@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/whoislookup",
-  "version": "1.2.0",
-  "description": "Whois Lookup is a simple tool for checking the registration of a domain name. It returns the name and contact information of the domain owner, the domain registrar, and more.",
+  "version": "1.2.2",
+  "description": "WHOIS Lookup checks domain registration records to return registrar details, creation and expiration dates, domain age, and active nameservers. Pass any domain name to inspect status codes and calculate days since registration.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "whois lookup", "whois lookup api", "whois lookup tool", "whois lookup software", "whois lookup service"
+    "whois api", "whois lookup api", "domain whois api", "whois domain api", "domain lookup api"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/whoislookup-api/issues"
   },
-  "homepage": "https://whoislookup.apiverve.com?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/whoislookup?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
