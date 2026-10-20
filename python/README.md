@@ -1,13 +1,12 @@
 WHOIS Lookup API
 ============
 
-Whois Lookup is a simple tool for checking the registration of a domain name. It returns the name and contact information of the domain owner, the domain registrar, and more.
+WHOIS Lookup checks domain registration records to return registrar details, creation and expiration dates, domain age, and active nameservers. Pass any domain name to inspect status codes and calculate days since registration.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [WHOIS Lookup API](https://whoislookup.apiverve.com?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-whoislookup.svg)](https://pypi.org/project/apiverve-whoislookup/)
+
+This is a Python wrapper for the [WHOIS Lookup API](https://apiverve.com/marketplace/whoislookup?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-whoislookup
 
 ## Configuration
 
-Before using the whoislookup API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the WHOIS Lookup API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -60,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The WHOIS Lookup API documentation is found here: [https://docs.apiverve.com/ref/whoislookup](https://docs.apiverve.com/ref/whoislookup?utm_source=pypi&utm_medium=readme).
+The WHOIS Lookup API documentation is found here: [https://docs.apiverve.com/ref/whoislookup](https://docs.apiverve.com/ref/whoislookup?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -102,24 +101,38 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "domainStatus": [
-      "clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited",
-      "clientRenewProhibited https://icann.org/epp#clientRenewProhibited",
-      "clientTransferProhibited https://icann.org/epp#clientTransferProhibited",
-      "clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited"
-    ],
     "domainName": "MYSPACE.COM",
     "registryDomainID": "3877095_DOMAIN_COM-VRSN",
-    "registrarWHOISServer": "whois.godaddy.com",
-    "registrarURL": "http://www.godaddy.com",
-    "updatedDate": "2023-01-17T00:16:21Z",
     "createdDate": "1996-02-22T05:00:00Z",
     "expiryDate": "2029-02-23T05:00:00Z",
+    "updatedDate": "2023-01-17T00:16:21Z",
+    "domainStatus": [
+      "client delete prohibited https://icann.org/epp#client delete prohibited",
+      "client renew prohibited https://icann.org/epp#client renew prohibited",
+      "client transfer prohibited https://icann.org/epp#client transfer prohibited",
+      "client update prohibited https://icann.org/epp#client update prohibited"
+    ],
+    "dNSSEC": "unsigned",
     "registrar": "GoDaddy.com, LLC",
     "registrarIANAID": "146",
+    "registrarURL": "http://www.godaddy.com",
     "registrarAbuseContactEmail": "abuse@godaddy.com",
-    "registrarAbuseContactPhone": "480-624-2505",
-    "dNSSEC": "unsigned"
+    "registrarAbuseContactPhone": "tel:480-624-2505",
+    "nameServers": [
+      "ns-cloud-a2.googledomains.com",
+      "ns-cloud-a3.googledomains.com",
+      "ns-cloud-a4.googledomains.com",
+      "ns-cloud-a1.googledomains.com"
+    ],
+    "domain": "myspace.com",
+    "fetchedAtUTC": "2025-12-17T01:54:05.069Z",
+    "tld": "com",
+    "status": "active",
+    "domainAgeDays": 11094,
+    "domainAgeYears": 30.4,
+    "isRecentlyRegistered": false,
+    "trustScore": 93,
+    "trustLevel": "high"
   }
 }
 ```
@@ -247,7 +260,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -258,12 +271,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
