@@ -38,6 +38,13 @@ declare module '@apiverve/whoislookup' {
       registrarAbuseContactEmail: null | string;
       registrarAbuseContactPhone: null | string;
       nameServers:                (null | string)[];
+      statusDetails:              StatusDetail[];
+      isTransferLocked:           boolean | null;
+      isOnHold:                   boolean | null;
+      isPendingDelete:            boolean | null;
+      registrantOrganization:     null | string;
+      registrantCountry:          null | string;
+      isPrivacyProtected:         boolean | null;
       domain:                     null | string;
       fetchedAtUTC:               Date | null;
       tld:                        null | string;
@@ -47,6 +54,12 @@ declare module '@apiverve/whoislookup' {
       isRecentlyRegistered:       boolean | null;
       trustScore:                 number | null;
       trustLevel:                 null | string;
+  }
+  
+  interface StatusDetail {
+      code:        null | string;
+      setBy:       null | string;
+      description: null | string;
   }
 
   export default class whoislookupWrapper {
