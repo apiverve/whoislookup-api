@@ -1,6 +1,6 @@
 # WHOIS Lookup API - Ruby Gem
 
-WHOIS Lookup checks domain registration records to return registrar details, creation and expiration dates, domain age, and active nameservers. Pass any domain name to inspect status codes and calculate days since registration.
+WHOIS Lookup is a domain WHOIS API that reads the registry's RDAP or WHOIS record for any domain and returns the registrar, creation and expiry dates, nameservers, EPP status codes explained in plain English, transfer-lock and privacy flags, the registrant country where it is published, and domain age in days and years.
 
 ## Installation
 
@@ -96,6 +96,34 @@ client = APIVerve::Whoislookup::Client.new(
       "ns-cloud-a4.googledomains.com",
       "ns-cloud-a1.googledomains.com"
     ],
+    "statusDetails": [
+      {
+        "code": "clientDeleteProhibited",
+        "setBy": "registrar",
+        "description": "The registrar blocks deletion"
+      },
+      {
+        "code": "clientRenewProhibited",
+        "setBy": "registrar",
+        "description": "The registrar blocks renewal"
+      },
+      {
+        "code": "clientTransferProhibited",
+        "setBy": "registrar",
+        "description": "The registrar blocks transfer to another registrar"
+      },
+      {
+        "code": "clientUpdateProhibited",
+        "setBy": "registrar",
+        "description": "The registrar blocks changes to the record"
+      }
+    ],
+    "isTransferLocked": true,
+    "isOnHold": false,
+    "isPendingDelete": false,
+    "registrantOrganization": "Domains By Proxy, LLC",
+    "registrantCountry": "US",
+    "isPrivacyProtected": true,
     "domain": "myspace.com",
     "fetchedAtUTC": "2025-12-17T01:54:05.069Z",
     "tld": "com",
