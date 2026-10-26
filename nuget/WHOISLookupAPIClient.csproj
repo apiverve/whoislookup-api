@@ -4,7 +4,7 @@
     <TargetFrameworks>net20;net35;net40;net45;netstandard2.0;netstandard2.1;net6.0;net8.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>WHOIS Lookup API</Title>
-    <Version>1.2.2</Version>
+    <Version>1.2.3</Version>
     <Authors>APIVerve</Authors>
     <Company>APIVerve</Company>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -14,7 +14,7 @@
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <PackageProjectUrl>https://apiverve.com/marketplace/whoislookup?utm_source=nuget&amp;utm_medium=referral&amp;utm_content=homepage</PackageProjectUrl>
     <SignAssembly>False</SignAssembly>
-    <Description>WHOIS Lookup checks domain registration records to return registrar details, creation and expiration dates, domain age, and active nameservers. Pass any domain name to inspect status codes and calculate days since registration.</Description>
+    <Description>WHOIS Lookup is a domain WHOIS API that reads the registry's RDAP or WHOIS record for any domain and returns the registrar, creation and expiry dates, nameservers, EPP status codes explained in plain English, transfer-lock and privacy flags, the registrant country where it is published, and domain age in days and years.</Description>
     <RepositoryUrl>https://github.com/apiverve/whoislookup-api</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>whois-api;whois-lookup-api;domain-whois-api;whois-domain-api;domain-lookup-api;api;rest;http;client;apiverve;wrapper;sdk</PackageTags>
@@ -37,7 +37,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
     <!-- Package Release Notes -->
-    <PackageReleaseNotes>WHOIS Lookup API client for .NET, version 1.2.2. Features include async/await support, automatic retries, custom headers, request logging, and cancellation token support.</PackageReleaseNotes>
+    <PackageReleaseNotes>WHOIS Lookup API client for .NET, version 1.2.3. Features include async/await support, automatic retries, custom headers, request logging, and cancellation token support.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">

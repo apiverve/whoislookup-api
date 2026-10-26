@@ -71,6 +71,27 @@ namespace APIVerve.API.WHOISLookup
         [JsonProperty("nameServers")]
         public string[] NameServers { get; set; }
 
+        [JsonProperty("statusDetails")]
+        public StatusDetail[] StatusDetails { get; set; }
+
+        [JsonProperty("isTransferLocked")]
+        public bool? IsTransferLocked { get; set; }
+
+        [JsonProperty("isOnHold")]
+        public bool? IsOnHold { get; set; }
+
+        [JsonProperty("isPendingDelete")]
+        public bool? IsPendingDelete { get; set; }
+
+        [JsonProperty("registrantOrganization")]
+        public string RegistrantOrganization { get; set; }
+
+        [JsonProperty("registrantCountry")]
+        public string RegistrantCountry { get; set; }
+
+        [JsonProperty("isPrivacyProtected")]
+        public bool? IsPrivacyProtected { get; set; }
+
         [JsonProperty("domain")]
         public string Domain { get; set; }
 
@@ -97,6 +118,18 @@ namespace APIVerve.API.WHOISLookup
 
         [JsonProperty("trustLevel")]
         public string TrustLevel { get; set; }
+    }
+
+    public partial class StatusDetail
+    {
+        [JsonProperty("code")]
+        public string Code { get; set; }
+
+        [JsonProperty("setBy")]
+        public string SetBy { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
     }
 
     public partial class Premium
