@@ -1,10 +1,10 @@
 [project]
 name = "apiverve-whoislookup"
-version = "1.2.2"
+version = "1.2.3"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "WHOIS Lookup checks domain registration records to return registrar details, creation and expiration dates, domain age, and active nameservers. Pass any domain name to inspect status codes and calculate days since registration."
+description = "WHOIS Lookup is a domain WHOIS API that reads the registry's RDAP or WHOIS record for any domain and returns the registrar, creation and expiry dates, nameservers, EPP status codes explained in plain English, transfer-lock and privacy flags, the registrant country where it is published, and domain age in days and years."
 keywords = ["whois api", "whois lookup api", "domain whois api", "whois domain api", "domain lookup api"]
 readme = "README.md"
 requires-python = ">=3.9"

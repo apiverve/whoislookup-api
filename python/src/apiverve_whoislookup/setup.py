@@ -10,11 +10,11 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_whoislookup',
-    version='1.2.2',
+    version='1.2.3',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
-    description='WHOIS Lookup checks domain registration records to return registrar details, creation and expiration dates, domain age, and active nameservers. Pass any domain name to inspect status codes and calculate days since registration.',
+    description='WHOIS Lookup is a domain WHOIS API that reads the registry's RDAP or WHOIS record for any domain and returns the registrar, creation and expiry dates, nameservers, EPP status codes explained in plain English, transfer-lock and privacy flags, the registrant country where it is published, and domain age in days and years.',
     author='APIVerve',
     author_email='hello@apiverve.com',
     url='https://apiverve.com/marketplace/whoislookup?utm_source=pypi&utm_medium=referral&utm_content=homepage',
